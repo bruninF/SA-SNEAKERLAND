@@ -6,7 +6,7 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['tipo_usuario'] !== 'administra
     header("Location: index.php");
     exit;
 }
-// Conexão com o banco de dados
+//CONEXÃO BANCO.
 $servername = "localhost";
 $username = "root";
 $password = "";
