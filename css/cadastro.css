@@ -1,0 +1,175 @@
+body {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+/* Estilo da zona de cadastro */
+.registration-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto; /* Para centralizar horizontalmente */
+    margin-top: 20px; /* Margem superior para ficar abaixo do cabeçalho */
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #5b3f8f; /* Cor do título em roxo */
+    margin-bottom: 15px; /* Espaçamento entre o título e os campos */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px; /* Espaçamento entre o rótulo e o campo */
+    font-weight: bold;
+    color: #5b3f8f; /* Cor do texto dos rótulos */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%; /* Largura total do campo */
+    padding: 10px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Espaçamento padronizado entre os campos */
+    border: 1px solid #5b3f8f; /* Bordas do campo em roxo */
+    border-radius: 4px; /* Bordas arredondadas */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+
+button {
+    width: 100%; /* Botão ocupa toda a largura */
+    background-color: #5b3f8f; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    padding: 10px; /* Espaçamento interno do botão */
+    border: none; /* Sem bordas */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor em forma de mão ao passar por cima */
+}
+
+button:hover {
+    background-color: #472f6b; /* Cor do botão ao passar o mouse */
+}
+
+p {
+    text-align: center; /* Centraliza mensagens de erro e sucesso */
+    color: #5b3f8f; /* Cor do texto de mensagens */
+}
+
+@media (max-width: 480px) {
+    .registration-container {
+        width: 90%;
+        margin: 10px auto; /* Margem para dispositivos menores */
+    }
+}
+
+.switch-container {
+    display: flex;
+    align-items: center; /* Alinha o switch e o texto verticalmente */
+    margin-bottom: 20px; /* Espaçamento padronizado */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    margin-right: 10px; /* Adiciona um espaçamento à direita do switch */
+}
+
+.switch input {
+    display: none; /* Esconde o checkbox */
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #5b3f8f; /* Cor do slider */
+    border-radius: 34px;
+    cursor: pointer;
+    transition: .4s; /* Transição suave */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px; /* Espaçamento à esquerda */
+    bottom: 2px;
+    background-color: white; /* Cor do botão do slider */
+    border-radius: 50%; /* Bordas arredondadas */
+    transition: .4s; /* Transição suave */
+}
+
+input:checked + .slider {
+    background-color: #5b3f8f; /* Cor do slider quando ativo */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px); /* Move o botão do slider quando ativo */
+}
+
+#tipo_usuario {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #4A4A4A;
+}
+
+#tipoUsuarioSelecionado {
+    text-align: center; /* Centraliza o texto */
+    color: #4A4A4A; /* Cor do texto */
+    font-size: 20px; /* Tamanho da fonte */
+    margin: 10px 0; /* Margem acima e abaixo */
+    font-weight: bold; /* Fonte em negrito */
+}
+
+.error-message {
+    margin-top: 10px; /* Espaçamento extra quando a mensagem de erro aparecer */
+}
+
+/* Campos adicionais para funcionário */
+#senha_funcionario_container,
+#dados_funcionario {
+    display: none; /* Oculta inicialmente */
+}
+
+#dados_funcionario label,
+#senha_funcionario_container label {
+    display: block;
+    margin-bottom: 8px; /* Espaçamento consistente com os outros rótulos */
+    font-weight: bold;
+    color: #5b3f8f; /* Cor dos rótulos */
+}
+
+#dados_funcionario input,
+#senha_funcionario_container input {
+    display: block;
+    width: 100%; /* Largura total das caixas de entrada */
+    padding: 10px;
+    margin-bottom: 20px; /* Espaçamento padronizado para os campos */
+    border: 1px solid #5b3f8f;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="date"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #5b3f8f;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

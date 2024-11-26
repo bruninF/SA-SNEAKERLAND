@@ -1,0 +1,103 @@
+body {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+h1 {
+    color: purple; /* Roxo escuro */
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #4b0082; /* Roxo escuro */
+    color: #fff;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+    background-color: #eaeaea;
+}
+
+tr:hover td {
+    background-color: #d3d3d3;
+}
+.button-container {
+    display: flex; /* Usar flexbox para os botões */
+    justify-content: space-around; /* Espaçamento igual entre os botões */
+    margin-top: 10px; /* Espaçamento acima do contêiner de botões */
+}
+
+button {
+    flex: 1; /* Faz com que os botões ocupem a mesma largura */
+    margin: 0 5px; /* Espaçamento entre os botões */
+    background-color: #5b3f8f; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    padding: 12px; /* Espaçamento interno do botão */
+    border: none; /* Sem bordas */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor em forma de mão ao passar por cima */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transições suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para o botão */
+}
+
+button:hover {
+    background-color: #472f6b; /* Cor do botão ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+}
+
+button:active {
+    transform: translateY(1px); /* Efeito de pressão ao clicar */
+}
+
+.search-form {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-form input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #6a0dad; /* Cor roxa */
+    border-radius: 5px;
+}
+
+.search-form button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    background-color: #6a0dad; /* Cor roxa */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #5a009a; /* Cor roxa escura */
+}

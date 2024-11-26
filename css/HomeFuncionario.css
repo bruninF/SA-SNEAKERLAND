@@ -1,0 +1,100 @@
+/* Reset básico */
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* Estilo geral */
+body {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f9;
+    color: #333;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Boas-vindas */
+.welcome-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.welcome-section h1 {
+    font-size: 2.5em;
+    color: #4a148c;
+}
+
+.welcome-section p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Navegação */
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nav-card {
+    background: #4a148c;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex: 1 1 calc(33.333% - 40px);
+    min-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.nav-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.nav-card ul li {
+    margin-bottom: 10px;
+}
+
+.nav-card ul li a {
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-card ul li a:hover {
+    color: #ffb74d;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-card {
+        flex: 1 1 100%;
+        max-width: 400px;
+    }
+}

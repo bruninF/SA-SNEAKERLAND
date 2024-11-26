@@ -1,0 +1,45 @@
+/* Arquivo: css/marcas.css */
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.page-marcas-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #4b0082; /* Roxo escuro */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.brand-list {
+    list-style: none;
+    padding: 0;
+}
+
+.brand-list li {
+    padding: 10px 0;
+    font-size: 1.2rem;
+}
+
+.brand-list li a {
+    color: #4b0082; /* Roxo escuro */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.brand-list li a:hover {
+    color: #6a0dad; /* Tom de roxo mais claro */
+}

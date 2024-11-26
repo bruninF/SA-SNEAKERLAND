@@ -1,0 +1,57 @@
+/* Estilo geral */
+body {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #6f42c1; /* Cor roxa */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    text-align: center;
+}
+
+th {
+    background-color: #6f42c1; /* Cor roxa */
+    color: white;
+}
+.pedido {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.pedido h2 {
+    color: #6f42c1; /* Cor roxa */
+}
+
+.pedido table {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.pedido img {
+    border-radius: 5px; /* Imagem com bordas arredondadas */
+}
