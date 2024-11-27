@@ -4,7 +4,7 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['tipo_usuario'] !== 'cliente') 
     header("Location: index.php");
     exit;
 }
-//Conexão com banco. 
+//Conexão com banco 
 $servername = "localhost";
 $username = "root";
 $password = "";

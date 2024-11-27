@@ -1,6 +1,19 @@
-<?php include 'conexaoBanco.php'; ?>
 <?php
 session_start();
+
+// Configurações de conexão com o banco de dados
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "sneakerland";
+
+// Cria a conexão com o banco de dados
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verifica a conexão
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
+}
 
 $cadastro_sucesso = false;
 $tipo_usuario_cadastrado = "cliente"; // Tipo padrão para cliente
@@ -75,10 +88,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
-<?php if (isset($_SESSION['usuario_id'])): ?>
-    <?php include 'headerADM.php'; ?>
-<?php endif; ?>
-
+    <?php if (isset($_SESSION['usuario_id'])): ?>
+        <?php include 'headerADM.php'; ?>
+    <?php endif; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -92,7 +104,7 @@ $conn->close();
 </head>
 
 <body>
-
+    
     <div class="registration-container">
         <h1>Cadastro</h1>
         <h2 id="tipoUsuarioSelecionado">Usuário</h2>
@@ -208,6 +220,8 @@ $conn->close();
 
             return true; // Permite o envio se a validação estiver correta
         };
+
+        
     </script>
 </body>
 

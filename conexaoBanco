@@ -1,5 +1,5 @@
 <?php
-session_start();
+ss
 $servername = "localhost"; // Altere se necessário
 $username = "root";  // Substitua pelo seu usuário
 $password = "";     // Substitua pela sua senha
@@ -12,4 +12,5 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
+
 ?>

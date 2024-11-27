@@ -15,7 +15,14 @@ $mensagem = "";
 
 // Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include 'conexaoBanco.php';
+    // Conectar ao banco de dados
+    $conn = new mysqli("localhost", "root", "", "sneakerland");
+
+    // Verificar a conexão
+    if ($conn->connect_error) {
+        die("Falha na conexão: " . $conn->connect_error);
+    }
+
     // Pegar os dados do formulário
     $nome = $_POST['nome'];
     $marca = $_POST['marca'];

@@ -1,4 +1,3 @@
-<?php include 'conexaoBanco.php'; ?>
 <?php
 session_start(); // Iniciar a sessão
 
@@ -6,6 +5,19 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['tipo_usuario'] !== 'administra
     // Se não estiver logado ou não for administrador, redireciona para o login
     header("Location: index.php");
     exit;
+}
+//CONEXÃO BANCO.
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "sneakerland";
+
+// Cria conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verifica conexão
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
 }
 
 // Consulta SQL para buscar clientes (usuários com tipo 'cliente')

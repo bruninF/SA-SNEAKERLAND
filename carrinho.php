@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ?>
         <a href="HomeUsuario.php" class="continuar-comprando">Continuar Comprando</a>
     </div>
-
+    
 </body>
 
 </html>

@@ -1,10 +1,22 @@
-<?php include 'conexaoBanco.php'; ?>
 <?php
 session_start();
 if (!isset($_SESSION['usuario_id']) || $_SESSION['tipo_usuario'] !== 'cliente') {
     // Se não estiver logado ou não for administrador, redireciona para o login
     header("Location: index.php");
     exit;
+}
+// Conexão com o banco de dados
+$servername = "localhost"; // Altere se necessário
+$username = "root";  // Substitua pelo seu usuário
+$password = "";     // Substitua pela sua senha
+$dbname = "sneakerland";     // Nome do banco de dados
+
+// Criando conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificando a conexão
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
 }
 
 // Consulta SQL para obter os produtos onde a categoria é igual a 'tênis'
