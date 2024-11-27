@@ -36,32 +36,32 @@ $result = $stmt->get_result();
 </head>
 
 <body>
-<?php include 'header.php'; ?>
+    <?php include 'header.php'; ?>
     <h1>Produtos da Marca <?php echo htmlspecialchars($marca); ?></h1>
     <div class="catalogo">
-    <?php
-    if ($result->num_rows > 0) {
-        $nomesExibidos = []; // Array para armazenar os nomes já exibidos
-        while ($row = $result->fetch_assoc()) {
-            // Verifica se o nome já foi exibido
-            if (!in_array($row["nome"], $nomesExibidos)) {
-                echo "<div class='produto'>";
-                echo "<a href='produto.php?nome=" . urlencode($row["nome"]) . "'>";
-                echo "<h2>" . htmlspecialchars($row["nome"]) . "</h2>";
-                echo "<p>Preço: R$ " . number_format($row["preco"], 2, ',', '.') . "</p>";
-                echo "<img src='" . htmlspecialchars($row["imagem_url"]) . "' alt='" . htmlspecialchars($row["nome"]) . "'>";
-                echo "</a>";
-                echo "</div>";
+        <?php
+        if ($result->num_rows > 0) {
+            $nomesExibidos = []; // Array para armazenar os nomes já exibidos
+            while ($row = $result->fetch_assoc()) {
+                // Verifica se o nome já foi exibido
+                if (!in_array($row["nome"], $nomesExibidos)) {
+                    echo "<div class='produto'>";
+                    echo "<a href='produto.php?nome=" . urlencode($row["nome"]) . "'>";
+                    echo "<h2>" . htmlspecialchars($row["nome"]) . "</h2>";
+                    echo "<p>Preço: R$ " . number_format($row["preco"], 2, ',', '.') . "</p>";
+                    echo "<img src='" . htmlspecialchars($row["imagem_url"]) . "' alt='" . htmlspecialchars($row["nome"]) . "'>";
+                    echo "</a>";
+                    echo "</div>";
 
-                // Adiciona o nome ao array para evitar duplicação
-                $nomesExibidos[] = $row["nome"];
+                    // Adiciona o nome ao array para evitar duplicação
+                    $nomesExibidos[] = $row["nome"];
+                }
             }
+        } else {
+            echo "<p>Nenhum produto encontrado para esta marca.</p>";
         }
-    } else {
-        echo "<p>Nenhum produto encontrado para esta marca.</p>";
-    }
-    ?>
-</div>
+        ?>
+    </div>
 
 </body>
 

@@ -37,7 +37,7 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['tipo_usuario'] !== 'administra
             <li>Tesla</li>
         </ul>
     </div>
-    
+
 </body>
 
 </html>

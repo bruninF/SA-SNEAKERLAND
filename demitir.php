@@ -53,4 +53,3 @@ $conn->close();
 // Redireciona de volta para a página de funcionários
 header("Location: funcionarios.php");
 exit();
-?>

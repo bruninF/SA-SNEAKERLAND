@@ -37,4 +37,3 @@ $conn->close();
 // Redireciona de volta para a página de clientes
 header("Location: clientes.php");
 exit();
-?>

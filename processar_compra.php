@@ -120,4 +120,3 @@ if (isset($_POST['finalizar_compra']) && !empty($_POST['payment_method']) && !em
 }
 
 $conn->close();
-?>

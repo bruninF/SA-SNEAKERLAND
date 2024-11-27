@@ -88,9 +88,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
-    <?php if (isset($_SESSION['usuario_id'])): ?>
-        <?php include 'headerADM.php'; ?>
-    <?php endif; ?>
+<?php if (isset($_SESSION['usuario_id'])): ?>
+    <?php include 'headerADM.php'; ?>
+<?php endif; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -104,7 +104,7 @@ $conn->close();
 </head>
 
 <body>
-    
+
     <div class="registration-container">
         <h1>Cadastro</h1>
         <h2 id="tipoUsuarioSelecionado">Usuário</h2>
@@ -220,8 +220,6 @@ $conn->close();
 
             return true; // Permite o envio se a validação estiver correta
         };
-
-        
     </script>
 </body>
 

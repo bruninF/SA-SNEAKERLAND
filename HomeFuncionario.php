@@ -7,6 +7,7 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['tipo_usuario'] !== 'funcionari
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['tipo_usuario'] !== 'funcionari
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/HomeFuncionario.css">
 </head>
+
 <body>
     <?php include 'headerFuncionario.php'; ?>
     <main>
@@ -23,7 +25,7 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['tipo_usuario'] !== 'funcionari
 
             </div>
             <div class="navigation">
-                
+
                 <div class="nav-card">
                     <h3>Consultar</h3>
                     <ul>
@@ -36,4 +38,5 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['tipo_usuario'] !== 'funcionari
         </div>
     </main>
 </body>
+
 </html>

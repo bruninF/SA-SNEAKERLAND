@@ -67,7 +67,6 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['tipo_usuario'] !== 'funcionari
             echo "<p id='cor'>Cor: <span id='cor-valor'>" . htmlspecialchars($produtos[0]["cor"]) . "</span></p>";
             echo "<p id='estoque'>Estoque: <span id='estoque-valor'>" . htmlspecialchars($produtos[0]["estoque"]) . "</span></p>";
             echo "</div>";
-
         } else {
             echo "Produto não encontrado.";
         }

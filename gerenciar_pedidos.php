@@ -110,63 +110,63 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-<div class="gerenciar-pedidos">
+    <div class="gerenciar-pedidos">
         <?php include 'headerADM.php'; ?> <!-- Inclui o cabeçalho -->
-    <div class="container">
-        <h1>Gerenciar Pedidos</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID do Pedido</th>
-                    <th>Data</th>
-                    <th>Usuário</th>
-                    <th>Status</th>
-                    <th>Total</th>
-                    <th>Itens</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($pedidos as $pedido_id => $pedido): ?>
+        <div class="container">
+            <h1>Gerenciar Pedidos</h1>
+            <table>
+                <thead>
                     <tr>
-                        <td><?php echo $pedido_id; ?></td>
-                        <td><?php echo date('d/m/Y H:i:s', strtotime($pedido['data'])); ?></td>
-                        <td><?php echo $pedido['usuario_nome']; ?></td>
-                        <td>
-                            <form method="POST" action="">
-                                <select name="status" onchange="this.form.submit()">
-                                    <option value="pendente" <?php echo ($pedido['status'] === 'pendente') ? 'selected' : ''; ?>
-                                        <?php echo ($pedido['status'] !== 'pendente') ? 'disabled' : ''; ?>>Pendente</option>
-
-                                    <option value="processando" <?php echo ($pedido['status'] === 'processando') ? 'selected' : ''; ?>
-                                        <?php echo ($pedido['status'] === 'concluido' || $pedido['status'] === 'cancelado') ? 'disabled' : ''; ?>>Processando</option>
-
-                                    <option value="concluido" <?php echo ($pedido['status'] === 'concluido') ? 'selected' : ''; ?>
-                                        <?php echo ($pedido['status'] !== 'processando') ? 'disabled' : ''; ?>>Concluído</option>
-
-                                    <option value="cancelado" <?php echo ($pedido['status'] === 'cancelado') ? 'selected' : ''; ?>
-                                        <?php echo ($pedido['status'] === 'concluido' || $pedido['status'] === 'cancelado') ? 'disabled' : ''; ?>>Cancelado</option>
-                                </select>
-                                <input type="hidden" name="pedido_id" value="<?php echo $pedido_id; ?>">
-                            </form>
-                        </td>
-
-                        <td>R$ <?php echo number_format($pedido['total'], 2, ',', '.'); ?></td>
-                        <td>
-                            <ul>
-                                <?php foreach ($pedido['itens'] as $item): ?>
-                                    <li>
-                                        <img src="<?php echo $item['imagem_url']; ?>" alt="<?php echo $item['nome']; ?>" width="50">
-                                        <?php echo $item['nome']; ?> - Quantidade: <?php echo $item['quantidade']; ?> - Preço: R$ <?php echo number_format($item['preco'], 2, ',', '.'); ?>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </td>
-
+                        <th>ID do Pedido</th>
+                        <th>Data</th>
+                        <th>Usuário</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Itens</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
+                </thead>
+                <tbody>
+                    <?php foreach ($pedidos as $pedido_id => $pedido): ?>
+                        <tr>
+                            <td><?php echo $pedido_id; ?></td>
+                            <td><?php echo date('d/m/Y H:i:s', strtotime($pedido['data'])); ?></td>
+                            <td><?php echo $pedido['usuario_nome']; ?></td>
+                            <td>
+                                <form method="POST" action="">
+                                    <select name="status" onchange="this.form.submit()">
+                                        <option value="pendente" <?php echo ($pedido['status'] === 'pendente') ? 'selected' : ''; ?>
+                                            <?php echo ($pedido['status'] !== 'pendente') ? 'disabled' : ''; ?>>Pendente</option>
+
+                                        <option value="processando" <?php echo ($pedido['status'] === 'processando') ? 'selected' : ''; ?>
+                                            <?php echo ($pedido['status'] === 'concluido' || $pedido['status'] === 'cancelado') ? 'disabled' : ''; ?>>Processando</option>
+
+                                        <option value="concluido" <?php echo ($pedido['status'] === 'concluido') ? 'selected' : ''; ?>
+                                            <?php echo ($pedido['status'] !== 'processando') ? 'disabled' : ''; ?>>Concluído</option>
+
+                                        <option value="cancelado" <?php echo ($pedido['status'] === 'cancelado') ? 'selected' : ''; ?>
+                                            <?php echo ($pedido['status'] === 'concluido' || $pedido['status'] === 'cancelado') ? 'disabled' : ''; ?>>Cancelado</option>
+                                    </select>
+                                    <input type="hidden" name="pedido_id" value="<?php echo $pedido_id; ?>">
+                                </form>
+                            </td>
+
+                            <td>R$ <?php echo number_format($pedido['total'], 2, ',', '.'); ?></td>
+                            <td>
+                                <ul>
+                                    <?php foreach ($pedido['itens'] as $item): ?>
+                                        <li>
+                                            <img src="<?php echo $item['imagem_url']; ?>" alt="<?php echo $item['nome']; ?>" width="50">
+                                            <?php echo $item['nome']; ?> - Quantidade: <?php echo $item['quantidade']; ?> - Preço: R$ <?php echo number_format($item['preco'], 2, ',', '.'); ?>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </td>
+
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 

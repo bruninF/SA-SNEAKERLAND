@@ -61,12 +61,14 @@ $conn->close();
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Sneakerland</title>
     <link rel="stylesheet" href="css/index.css"> <!-- Link para o CSS -->
 </head>
+
 <body>
     <div class="login-container">
         <h1>Login</h1>
@@ -90,4 +92,5 @@ $conn->close();
         <p class="signup-prompt">Se não tiver login, <a href="cadastro.php" class="signup-link">clique aqui para se cadastrar</a>.</p>
     </div>
 </body>
+
 </html>

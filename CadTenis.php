@@ -1,8 +1,6 @@
 <?php
 session_start(); // Iniciar a sessão
 
-// Habilitar a exibição de erros
-
 
 if (!isset($_SESSION['usuario_id']) || $_SESSION['tipo_usuario'] !== 'administrador') {
     // Se não estiver logado ou não for administrador, redireciona para o login
@@ -39,9 +37,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $imagem_nome = $_FILES['imagem']['name'];
         $imagem_tmp = $_FILES['imagem']['tmp_name'];
         $imagem_tipo = mime_content_type($imagem_tmp); // Obter o tipo MIME da imagem
-        $tipos_permitidos = ['image/jpeg', 'image/png', 'image/gif', 'image/jfif'];
+        $tipos_permitidos = ['image/jpeg', 'image/png', 'image/gif', 'image/jfif', 'image/avif'];
         $extensao = pathinfo($imagem_nome, PATHINFO_EXTENSION);
-        $extensoes_permitidas = ['jpg', 'jpeg', 'png', 'gif', 'jfif'];
+        $extensoes_permitidas = ['jpg', 'jpeg', 'png', 'gif', 'jfif', 'avif'];
 
         if (in_array($extensao, $extensoes_permitidas) && in_array($imagem_tipo, $tipos_permitidos)) {
             $imagem_destino = 'uploads/' . basename($imagem_nome);

@@ -25,7 +25,7 @@ if (isset($_SESSION['mensagem_sucesso'])) {
             <i class="fas fa-user"></i>
         </a>
         <span class="user-type"> <!-- Tipo de usuário ao lado do menu -->
-        <?php echo htmlspecialchars($_SESSION['nome_usuario']); ?>
+            <?php echo htmlspecialchars($_SESSION['nome_usuario']); ?>
         </span>
     </div>
     <div class="header-content">

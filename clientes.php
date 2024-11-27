@@ -37,7 +37,7 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-    
+
     <div class="container">
         <h1>Clientes</h1>
         <table>
@@ -82,7 +82,7 @@ $result = $conn->query($sql);
             </tbody>
         </table>
 
-        
+
     </div>
 </body>
 

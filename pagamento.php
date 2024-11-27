@@ -22,6 +22,7 @@ $enderecoExistente = $resultEndereco->fetch_assoc();
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,13 +30,14 @@ $enderecoExistente = $resultEndereco->fetch_assoc();
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/pagamento.css">
 </head>
+
 <body>
     <?php include 'header.php'; ?>
-    
+
     <form id="paymentForm" method="post" action="processar_compra.php">
         <h2>Endereço de Entrega</h2>
         <input type="hidden" name="usuario_id" value="<?php echo $usuario_id; ?>">
-        
+
         <label for="endereco">Endereço:</label>
         <input type="text" id="endereco" name="endereco" value="<?php echo $enderecoExistente['endereco'] ?? ''; ?>" required>
 
@@ -129,7 +131,7 @@ $enderecoExistente = $resultEndereco->fetch_assoc();
                 .replace(/(\d{2})(\d{1,2})/, '$1/$2')
                 .slice(0, 5);
         });
-
     </script>
 </body>
+
 </html>
