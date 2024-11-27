@@ -45,6 +45,7 @@ if (isset($_SESSION['mensagem_sucesso'])) {
         <li><a href="cadastro.php">Novo Cadastro</a></li>
         <li><a href="sobrenos.php">Sobre nós</a></li>
         <li><a href="fornecedores.php">Fornecedores</a></li>
+        <li><a href="produtosMaisComprados.php">Produtos mais Comprados</a></li>
         <li><a href="logout.php">Sair</a></li>   
     </ul>
 </nav>
