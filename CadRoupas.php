@@ -14,13 +14,7 @@ $mensagem = "";
 
 // Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Conectar ao banco de dados
-    $conn = new mysqli("localhost", "root", "", "sneakerland");
-
-    // Verificar a conexão
-    if ($conn->connect_error) {
-        die("Falha na conexão: " . $conn->connect_error);
-    }
+    include 'conexaoBanco.php';
 
     // Pegar os dados do formulário
     $nome = $_POST['nome'];
@@ -103,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-<?php include 'headerADM.php'; ?>
+    <?php include 'headerADM.php'; ?>
 
     <form method="POST" action="" enctype="multipart/form-data">
         <h2>Cadastro de Roupas</h2>
@@ -115,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <label for="tamanho">Tamanho:</label>
         <input type="text" id="tamanho" name="tamanho" required>
-           
+
 
         <label for="cor">Cor</label>
         <input type="text" id="cor" name="cor" required>
@@ -142,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } ?>
     </form>
 
-    
+
 </body>
 
 </html>
