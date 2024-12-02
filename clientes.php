@@ -71,6 +71,12 @@ $result = $conn->query($sql);
                                         <button type='submit'>Excluir</button>
                                         </div>
                                     </form>
+                                    <form method='GET' action='editar_cliente.php'>
+                                        <input type='hidden' name='id' value='" . $row["id"] . "' />
+                                        <div class='button-container'>
+                                        <button type='submit'>Editar</button>
+                                        </div>
+                                    </form>
                                 </td>
                             </tr>";
                     }

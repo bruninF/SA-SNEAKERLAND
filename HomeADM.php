@@ -43,6 +43,7 @@ if (isset($_SESSION['mensagem_sucesso'])) {
             <a href="clientes.php"><button class="nav-btn">Gerenciar Usuários</button></a>
             <a href="funcionarios.php"><button class="nav-btn">Gerenciar Funcionários</button></a>
             <a href="gerenciar_pedidos.php"><button class="nav-btn">Gerenciar Pedidos</button></a>
+            <a href="ver_produtos.php"><button class="nav-btn">Editar Itens</button></a>
             <div class="nav-btn-container">
                 <button class="nav-btn">Adicionar Item</button>
                 <div class="submenu">

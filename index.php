@@ -25,14 +25,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senha = $conn->real_escape_string($senha);
 
     // Consulta no banco de dados pelo email
-    $sql = "SELECT * FROM usuarios WHERE email = '$email'";
+    $sql = "SELECT u.*, f.status AS status_funcionario 
+            FROM usuarios u 
+            LEFT JOIN funcionarios f ON u.id = f.usuario_id 
+            WHERE u.email = '$email'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
 
+        // Verificação do status (apenas para funcionários)
+        if ($row['tipo_usuario'] === 'funcionario' && $row['status_funcionario'] === 'inativo') {
+            $erro_login = "Seu acesso foi inativado. Entre em contato com o administrador.";
+        }
         // Verificação da senha (alterar caso esteja criptografada)
-        if ($senha == $row['senha']) { // Se a senha for em texto plano
+        elseif ($senha == $row['senha']) { // Se a senha for em texto plano
             // Salva os dados na sessão
             $_SESSION['usuario_id'] = $row['id']; // Armazena o ID do usuário na sessão
             $_SESSION['tipo_usuario'] = $row['tipo_usuario']; // Armazena o tipo de usuário na sessão

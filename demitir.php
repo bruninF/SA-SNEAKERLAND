@@ -17,34 +17,24 @@ if ($conn->connect_error) {
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
 
-    // Inicia uma transação para garantir que as duas exclusões ocorram juntas
-    $conn->begin_transaction();
-
     try {
-        // Exclui da tabela 'funcionarios'
-        $sql_funcionario = "DELETE FROM funcionarios WHERE usuario_id = ?";
-        $stmt_funcionario = $conn->prepare($sql_funcionario);
-        $stmt_funcionario->bind_param("i", $id);
-        $stmt_funcionario->execute();
+        // Atualiza o status do funcionário para "inativo"
+        $sql = "UPDATE funcionarios SET status = 'inativo' WHERE usuario_id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
 
-        // Exclui da tabela 'usuarios'
-        $sql_usuario = "DELETE FROM usuarios WHERE id = ?";
-        $stmt_usuario = $conn->prepare($sql_usuario);
-        $stmt_usuario->bind_param("i", $id);
-        $stmt_usuario->execute();
-
-        // Se ambas as exclusões ocorrerem com sucesso, confirma a transação
-        $conn->commit();
-        echo "Funcionário demitido com sucesso!";
+        if ($stmt->affected_rows > 0) {
+            echo "<script>alert('Funcionário demitido com sucesso!'); window.location.href = 'funcionarios.php';</script>";
+        } else {
+            echo "<script>alert('Erro ao demitir funcionário: ID não encontrado.'); window.location.href = 'funcionarios.php';</script>";
+        }
     } catch (Exception $e) {
-        // Se ocorrer um erro, desfaz a transação
-        $conn->rollback();
-        echo "Erro ao demitir funcionário: " . $e->getMessage();
+        echo "<script>alert('Erro ao demitir funcionário: " . $e->getMessage() . "'); window.location.href = 'funcionarios.php';</script>";
     }
 
-    // Fecha os statements
-    $stmt_funcionario->close();
-    $stmt_usuario->close();
+    // Fecha o statement
+    $stmt->close();
 }
 
 // Fecha a conexão

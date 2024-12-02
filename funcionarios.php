@@ -30,7 +30,7 @@ if ($conn->connect_error) {
 $sql = "SELECT u.id, u.nome, u.email, u.senha, u.telefone, u.cpf, u.sexo, f.cargo, f.data_admissao, f.salario 
         FROM usuarios u 
         JOIN funcionarios f ON u.id = f.usuario_id
-        WHERE u.tipo_usuario = 'funcionario'";
+        WHERE u.tipo_usuario = 'funcionario' AND f.status = 'ativo'";
 
 $result = $conn->query($sql);
 
@@ -65,6 +65,7 @@ $result = $conn->query($sql);
                     <th>Data de Admissão</th>
                     <th>Salário</th>
                     <th>Ações</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -87,6 +88,10 @@ $result = $conn->query($sql);
                                     <form method='POST' action='demitir.php' onsubmit='return confirm(\"Tem certeza que deseja demitir?\");'>
                                         <input type='hidden' name='id' value='" . $row["id"] . "' />
                                         <button type='submit'>Demitir</button>
+                                    </form>
+                                    <form method='GET' action='editar_funcionario.php'>
+                                        <input type='hidden' name='id' value='" . $row["id"] . "' />
+                                        <button type='submit'>Editar</button>
                                     </form>
                                 </td>
                             </tr>";
